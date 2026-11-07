@@ -65,7 +65,7 @@ Once a report kind is clear, open its reference file. Open `output-formats.md` b
 8. **2-minute is the clock** (the last 2:00 of the 2nd or 4th quarter). A true two-minute call is hurry-up by feel, which the data can't see; say so if he means the hurry-up.
 9. **Each film is its own.** The games table shows each game on its own line. A lean that lives in one game is said as one game. When the coordinator or the quarterback changed, split the span with `games` or `seasons`. Never blend across that change.
 10. **No grades in a report.** Grades are a live pull, and only when he asks (`get_player_grades`).
-11. **Never name a data vendor, and never say where the data comes from.** Call it play-by-play data.
+11. **Call it play-by-play data.** The Source line the tool prints is the only statement of where the data comes from; never add one of your own.
 12. **Report the threat, never the fit.** Write "Counter is their most explosive run", with its rate and n. Never write how to defend it, or how they should play it. The call is the coach's.
 13. **A finding must change a call.** A finding that lists three plays and predicts nothing, or tells a coordinator what he already knows, is cut. A weak finding stays in as "a lead to check on film", with its count.
-14. **Check before saying "not in the data."** First look at what the report and `find_plays` can say. When the store really can't answer something (receiver splits, RB depth, route concepts, what they did after a big play), say so once, plainly, and give what it can answer.
+14. **Check before saying "not in the data."** First look at what the report and `find_plays` can say. When the store really can't answer something (receiver splits, RB depth, what they did after a big play), say so once, plainly, and give what it can answer.

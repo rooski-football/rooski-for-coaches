@@ -44,7 +44,7 @@ How a staff reads an opponent: who they are, film by film, then the tables in th
 - RB depth, WR splits, TE side, alignment tips.
 - What they call after a big play, a sack or a turnover (sequencing).
 - The opening script.
-- Route concepts by side.
+- Route concepts by side. The report doesn't count them; `find_plays` filters `route_concept` and `pass_concept` in seasons that chart them.
 - The pre-snap shell shown versus played.
 - Man versus zone.
 - Score and game state.
