@@ -1,0 +1,15 @@
+{
+  "name": "rooski",
+  "description": "Rooski's plugins for football coaches.",
+  "owner": {
+    "name": "Rooski",
+    "url": "https://rooski.com"
+  },
+  "plugins": [
+    {
+      "name": "rooski",
+      "source": "./plugins/rooski",
+      "description": "Scouting reports, self-scouts and tendency studies from your program's play-by-play data, through the Rooski connector."
+    }
+  ]
+}

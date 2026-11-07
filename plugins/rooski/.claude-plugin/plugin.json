@@ -1,0 +1,12 @@
+{
+  "name": "rooski",
+  "displayName": "Rooski",
+  "version": "0.1.1",
+  "description": "Scouting reports, self-scouts and tendency studies from your program's play-by-play data. Works with the Rooski connector, which you add separately.",
+  "author": {
+    "name": "Rooski",
+    "url": "https://rooski.com"
+  },
+  "homepage": "https://rooski.com",
+  "keywords": ["football", "coaching", "scouting", "self-scout", "tendencies"]
+}
