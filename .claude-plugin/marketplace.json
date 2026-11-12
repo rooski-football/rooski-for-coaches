@@ -9,7 +9,7 @@
     {
       "name": "rooski",
       "source": "./plugins/rooski",
-      "description": "Scouting reports, self-scouts and tendency studies from your program's play-by-play data, through the Rooski connector."
+      "description": "Scouting reports, self-scouts and tendency studies from your program's play-by-play data, and your Rooski Drive folders (setup, weekly tidy, week open, upgrade and the season turn), through the Rooski connector."
     }
   ]
 }
