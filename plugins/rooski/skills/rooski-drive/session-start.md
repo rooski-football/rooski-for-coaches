@@ -2,6 +2,8 @@
 
 Every plan gets this, in every chat that touches his Drive or Rooski, once per chat. It builds what today needs (a week that's now scheduled, the next playoff week, the open week's files). It also names playoff folders once the opponent is known, and says when the season turn is due.
 
+**The connector usually starts it.** Its start-of-chat answer can carry a `drive` block with a `line` telling you to run this check first. That line and this routine are the same job: do it once.
+
 **Skip it** if the Rooski connector already returned a light check this chat. Act on that answer instead (steps 3 and 4).
 
 ## 1. Find the Home Map
@@ -29,7 +31,7 @@ Don't send a `listing`; that is for the weekly tidy.
 |---|---|
 | `ok: false` with `home_map.errors` | The map couldn't be read, so nothing was checked. Tell him once, in plain words, that his Home Map has a problem, with the first error. Offer to write a clean map without the bad rows. The weekly tidy finds those items again. |
 | `build` | Items missing today, level by level, with `parent_id` where the parent is in the map. Build them under the build rule. No yes is needed. |
-| `build` items with `when: "week_start"` | The open week's files (Pro and up). Make them the week-open way (`week-open.md`, step 4). |
+| `build` items with `when: "week_start"` | The open week's files (Pro and up). Each says where it comes from (`from`, and `master_id` when the master is in the map). Make them the week-open way (`week-open.md`, step 4). |
 | `name` | A playoff folder that can now carry its opponent. Each has `from`, `to`, `id` and a `line`. |
 | `turn` | The season turn is due: `season`, `line`, and `args` (the dates the check used). |
 | `summary`, `live_year`, `open_week` | Use these for your one line to him. |
