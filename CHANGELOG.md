@@ -1,5 +1,8 @@
 # What's new
 
+## 0.2.1 — November 2026
+- Rooski Drive: your AI now takes your plan and your Drive's place straight from the Rooski connector, copies each week's files from the right master (a head coach's practice plan comes from his head coach folder), and the weekly tidy points out files left loose and how many are waiting in your Inbox. Nothing moves without your yes, and nothing is ever deleted.
+
 ## 0.2.0 — November 2026
 - New: the **Rooski Drive** skill. Say "set up my Rooski Drive" and your AI builds your football folders in your own Google Drive, then keeps them tidy: a quick check each chat, a weekly clean-up, opening each game week (playoffs too), moving into your program's drive, and putting the season away when it ends. Nothing moves without your yes, nothing is ever deleted, and every move is written down so it can be undone. Needs the Rooski connector and Google Drive.
 

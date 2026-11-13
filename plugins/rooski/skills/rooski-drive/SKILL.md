@@ -35,12 +35,12 @@ Open the routine's reference file before the first call.
 
 1. **Find the Home Map.** It is a markdown file whose text begins `# Home Map`. Search his Drive for it.
    - **Keep only maps whose header says `tree: personal`.** A program's Room Map begins the same way, with `tree: program`. Use it only where a routine asks for the Room Map.
-   - If his Rooski profile holds his top folder's ID (`storage_map.home_folder`), take the map whose `root` row has that ID.
+   - **The connector may hand you the IDs.** Its start-of-chat answer can carry a `drive` block with `home_folder_id` and `home_map_id`. Read the map by `home_map_id` when it has one (a newer map in the same folder still wins). With only `home_folder_id`, or his profile's `storage_map.home_folder`, take the map whose `root` row has that ID.
    - **Two or more left: the newest wins.** That is the latest `written:` date; on the same date, the latest Drive created time. The older ones are old copies: put them away (Writing the Home Map, step 3) and never treat them as current.
    - If you find none, he has no Rooski Drive yet. Offer setup.
 2. **Read the whole map.** Its header holds his answers (plan, role, rooms, live year, open week, turn date). Its rows (`| slot | id | name |`) give every folder and file by Drive ID.
 3. **Pass `today`** as his local date, YYYY-MM-DD, on every call.
-4. **His plan** (`free`, `pro` or `program`) is the header's `plan:`. Before setup there is no map: ask him once. If he isn't sure, use `free` and tell him that switching later only changes the map's header; the next weekly tidy then builds the rest.
+4. **His plan** (`free`, `pro` or `program`) comes from Rooski when a tool gives it: the `drive` block's `plan`, or `plan` in `rooski_get` kind `my_data`. When the tool's plan is null, use the header's `plan:`. If the tool's plan differs from the header, the tool wins and the next Home Map you write carries it. Before setup there is no map and no plan from a tool: ask him once. If he isn't sure, use `free` and tell him that switching later only changes the map's header; the next weekly tidy then builds the rest.
 5. **The schedule** comes from his Season Hub when its row is in the map and you can read it. Otherwise ask him. Pass each game as `{ week, opponent, date, playoff }`.
 6. **Act only on the answer's fields.** Show him each offer's `line` text as the tool wrote it. If the answer has `ok: false`, `errors` or `problems`, show them in plain words and change nothing.
 7. **If a call is refused for an argument,** fix that one argument and call again once. If it fails again, tell him what didn't work.

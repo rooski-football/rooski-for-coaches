@@ -42,8 +42,9 @@ Show them in this order, one per line, using the tool's `line` text, until you r
 | `gone` | A map row whose item is no longer in its folder. | Look its ID up in Drive. If it is somewhere else, offer to move it back. If it is in the trash or not found, tell him; on his yes, drop the row, and the next check makes a fresh one. |
 | `name_differs` | A name that differs from Rooski's (`name` and `tree_name`). | Rename `id` to `tree_name` and change its row's name. |
 | `name` | A playoff folder that can carry its opponent. | Rename `id` to `to` and change its row's name. |
+| `loose` | A file sitting in a folder that should hold only folders. `move_to` has a slot, a name and, when it is built, an ID. | Move `id` into `move_to.id`. If `move_to` has no ID, build that folder first. |
 | Older Home Maps | "You have `<n>` old copies of your Home Map. Put them away?" | Move them to the `earlier` row's folder. |
-| His Inbox | If the `inbox` row's folder holds items: "Your Inbox has `<n>` items. Want to sort them now?" | Go through them one at a time. Suggest a home (SKILL.md, Where it goes). He says yes or names another. |
+| His Inbox | If `inbox.count` is more than 0: "Your Inbox has `<n>` items. Want to sort them now?" If the answer has no `inbox`, count the `inbox` row's folder from your listing. | Go through them (`inbox.items`, or your listing) one at a time. Suggest a home (SKILL.md, Where it goes). He says yes or names another. |
 
 If lines are left over: "`<n>` more next week."
 

@@ -25,13 +25,16 @@ Read `open_week`, `build` and `name` (the table in `session-start.md`).
 ## 4. Build the week
 
 1. **Folders first:** build each folder in `build` under the build rule (a new week or playoff week).
-2. **The week's files** are the `build` items with `when: "week_start"`. Each comes from its master, so find the masters once:
-   - Call `rooski_tree_plan` with the map header's answers (`tree`, `plan`, `head_coach`, `life`, `teaching`, `upgraded`), plus `year` set to the header's `live_year`, `today`, `schedule` and `open_week`.
-   - The master for a week file is the plan item with the **same `starter`** whose `parent` is `templates`. Its Drive ID is that slot's row in the Home Map.
+2. **The week's files** are the `build` items with `when: "week_start"`. Each one says where it comes from:
+   - `from: "every_year_master"`: copy the file `master_id` (its master, `master_name`).
+   - `from: "rooski_starter"`: the master isn't in the map. Make the file as a starter item (SKILL.md, The build rule, step 5).
+   - `from: "empty"`: make an empty file of its kind.
+   - **A head coach's practice plan:** if the header says `head_coach: yes` and not `upgraded: yes`, the Practice Plan's master is the `p.practice_plan` row (in his head coach folder), not the one in Templates. Copy that row's ID when the map has it; otherwise use the line's own source.
+   - **No `from` on the line** (an older connector): find the masters once the old way. Call `rooski_tree_plan` with the map header's answers (`tree`, `plan`, `head_coach`, `life`, `teaching`, `upgraded`), plus `year` set to the header's `live_year`, `today`, `schedule` and `open_week`. The master for a week file is the plan item with the **same `starter`** whose `parent` is `templates` (for a head coach's practice plan, `p.practice_plan`). Its Drive ID is that slot's row in the Home Map.
 3. **For each week file:**
    - list the week folder first (the build rule);
    - then **copy** the master into the week folder (`parent_id`) under the item's `name`.
-   - If the master has no row in the map, make the file as a starter item (SKILL.md, The build rule, step 5).
+   - If there is no master to copy, make the file as a starter item (SKILL.md, The build rule, step 5).
 4. **Name lines** (a playoff opponent is now known): one question; on his yes, receipt first, then rename (`session-start.md`, step 4).
 
 ## 5. Move the star

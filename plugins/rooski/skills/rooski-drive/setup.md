@@ -46,6 +46,7 @@ Use the build rule in SKILL.md, item by item, in the plan's order.
 1. **Depth 0 is the top folder.** Reuse the one from section 1 if there is one; otherwise make it with the plan's name.
 2. **For each parent,** list it once, then reuse or make each of its items.
    - A starter item: the name and type from the plan, and one line saying what it is for.
+   - **A head coach** (`head_coach: yes`): the Practice Plan Master in Templates gets one line pointing to the real one, the `p.practice_plan` item, named with its folder's name from the plan: "Your weekly practice plans are copied from the Practice Plan Master in `<that folder>`."
    - The item whose slot is `home_map.slot` is the map itself. Don't make it as an empty file; step 3 writes it.
 3. **Write the first map early.** As soon as the folder for `home_map.in_slot` exists, write the map into it:
    - name `home_map.file`;
