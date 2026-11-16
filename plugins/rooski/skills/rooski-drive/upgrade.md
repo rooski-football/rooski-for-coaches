@@ -66,3 +66,4 @@ There is no tool step for this. On his yes:
    - **His Home Map:** start from the copy before the upgrade, in his `earlier` row's folder.
    - **The Room Map:** start from the copy before the upgrade, in the program's `archive` row's folder.
    - In both, keep any row added since the upgrade whose item didn't move back.
+   - In his Home Map, keep the newest map's `#` lines (SKILL.md, Writing the Home Map).

@@ -33,7 +33,7 @@ Skip any line for the map's own slot.
 
 ## 5. Show the lines that need his yes
 
-Show them in this order, one per line, using the tool's `line` text, until you reach his cap:
+Show them in this order, one per line, using the tool's `line` text, until you reach his cap. Skip any line for an ID in the map's `## Not tidied` list (he put it back on purpose):
 
 | Field | The offer | On his yes |
 |---|---|---|
@@ -58,4 +58,5 @@ If lines are left over: "`<n>` more next week."
 
 1. Write a new Home Map with the recorded, built, renamed and dropped rows (SKILL.md, Writing the Home Map).
 2. Tell him in one line what you tidied, with the count. If lines are left, add "`<n>` more next week."
-3. If the answer has a `turn` line, say it last (`season-turn.md`).
+3. If the answer has a `turn` line, say it next (`season-turn.md`).
+4. If the share offer is due and wasn't made this chat, make it last (`rooski-help.md` section C).
