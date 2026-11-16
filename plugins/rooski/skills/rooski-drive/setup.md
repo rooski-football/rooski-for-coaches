@@ -12,13 +12,14 @@ Every plan gets this. It is Lesson 2. His own AI builds his personal tree here, 
 
 | Argument | Ask |
 |---|---|
+| `plan` | "Which Rooski plan are you on: Free, Pro or Program?" Not sure: `free` (SKILL.md, step 4). |
 | `head_coach` | "Are you the head coach?" |
 | `life` | "Do you want an extra folder for life outside football?" |
 | `teaching` | "Do you teach classes? Want a folder for that?" |
 | `schedule` | "What's your schedule: week, opponent, date?" No schedule yet: build without it. Week folders come when he adds it. |
 | `last_game_date` | Only if his season is already over: "When was your last game?" |
 
-Never ask which plan he's on. Pass Rooski's plan, or `free` when Rooski shows none (SKILL.md, Every routine, step 4). Use `tree: "personal"`. Pass `last_regular` only if he names his last regular-season week. Pass `turn_date` only from his Season Hub.
+Use `tree: "personal"`. Pass `last_regular` only if he names his last regular-season week. Pass `turn_date` only from his Season Hub.
 
 ## 3. Ask for the plan
 

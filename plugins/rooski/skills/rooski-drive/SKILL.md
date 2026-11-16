@@ -43,10 +43,7 @@ Open the routine's reference file before the first call.
    - If you find none, he has no Rooski Drive yet. Offer setup.
 2. **Read the whole map.** Its header holds his answers (plan, role, rooms, live year, open week, turn date). Its rows (`| slot | id | name |`) give every folder and file by Drive ID.
 3. **Pass `today`** as his local date, YYYY-MM-DD, on every call.
-4. **His plan** (`free`, `pro` or `program`) comes from Rooski only: the `drive` block's `plan`, or `plan` in `rooski_get` kind `my_data` (read it once if neither is in this chat). Never take it from the map's header, and never ask him which plan he's on.
-   - If the header's `plan:` differs from Rooski's, Rooski's wins and the next Home Map you write carries it.
-   - **Rooski answers with no plan** (`plan: null`): use the Free steps, write `free` in any map you write, and tell him once, plainly: "Rooski doesn't show your plan yet, so I'm keeping your Rooski Drive to the basics for now. Once Rooski adds your plan, the next weekly tidy builds the rest."
-   - **Rooski didn't answer** (the call failed, or the tool isn't there): that isn't "no plan". Use the Free steps this chat, but leave the header's `plan:` as it is and make no share offer.
+4. **His plan** (`free`, `pro` or `program`) comes from Rooski when a tool gives it: the `drive` block's `plan`, or `plan` in `rooski_get` kind `my_data`. When the tool's plan is null, use the header's `plan:`. If the tool's plan differs from the header, the tool wins and the next Home Map you write carries it. Before setup there is no map and no plan from a tool: ask him once. If he isn't sure, use `free` and tell him that switching later only changes the map's header; the next weekly tidy then builds the rest.
 5. **The schedule** comes from his Season Hub when its row is in the map and you can read it. Otherwise ask him. Pass each game as `{ week, opponent, date, playoff }`.
 6. **Act only on the answer's fields.** Show him each offer's `line` text as the tool wrote it. If the answer has `ok: false`, `errors` or `problems`, show them in plain words and change nothing.
 7. **If a call is refused for an argument,** fix that one argument and call again once. If it fails again, tell him what didn't work.

@@ -1,7 +1,7 @@
 # What's new
 
 ## 0.3.0 — November 2026
-- Rooski Drive: on a paid plan, you can now share your `! Rooski Drive` folder with Rooski, and on Sundays Rooski moves leftover temp files from Word, Excel and PowerPoint, and exact copies, into your old-versions folder. Every move is written down before it happens, and your AI puts that list in your Drive, tells you what moved, and can put any file back. Rooski never deletes, never makes or renames files in your Drive, and never changes what's in them. To stop it, un-share the folder. Your AI asks at most once a season. Your AI also stops asking which plan you're on; it takes that from Rooski.
+- Rooski Drive: on a paid plan, you can now share your `! Rooski Drive` folder with Rooski, and on Sundays Rooski moves leftover temp files from Word, Excel and PowerPoint, and exact copies, into your old-versions folder. Every move is written down before it happens, and your AI puts that list in your Drive, tells you what moved, and can put any file back. Rooski never deletes, never makes or renames files in your Drive, and never changes what's in them. To stop it, un-share the folder. Your AI asks at most once a season.
 
 ## 0.2.1 — November 2026
 - Rooski Drive: your AI now takes your plan and your Drive's place straight from the Rooski connector, copies each week's files from the right master (a head coach's practice plan comes from his head coach folder), and the weekly tidy points out files left loose and how many are waiting in your Inbox. Nothing moves without your yes, and nothing is ever deleted.
