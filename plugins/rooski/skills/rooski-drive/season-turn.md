@@ -53,7 +53,7 @@ Read the answer:
    - `promote`: move `id` into `to_id` and name it `new_name`.
    - `retire`: move `id` into `to_id`.
    - `early`: move `id` into `to_id`. If there is no `to_id`, use the ID of the folder you built for `to_slot`.
-4. **The Home Map:** a new file with `home_map_after.text`, plus a row for each item you built (SKILL.md, Writing the Home Map).
+4. **The Home Map:** a new file with `home_map_after.text`, plus a row for each item you built and the old map's `#` lines (SKILL.md, Writing the Home Map). Its new `live_year` makes the share offer due again (`rooski-help.md` section C).
 5. Tell him in one line that his season is put away and next year is ready.
 
 ### Not yet
@@ -81,7 +81,7 @@ He says "undo that" or "undo the turn".
    1. **The undo receipt first:** make `receipt.name` in `receipt.parent_id` with `receipt.text`.
    2. **Then each item in `moves`, in `step` order:** move `id` into `to_parent_id`, and name it `name` when one is given.
       - An item with `find_in` and no `id`: list that folder and take the item with that `name` and `kind`.
-   3. **The Home Map:** `home_map_after.text`. If there is no `home_map_after`, follow `home_map_note`.
+   3. **The Home Map:** `home_map_after.text`, plus the old map's `#` lines (SKILL.md, Writing the Home Map). If there is no `home_map_after`, follow `home_map_note`.
 6. Tell him: "Your `<season>` season is live again. I'll ask about the turn again on `<ask_again_on>`."
 
 Nothing the turn made is deleted. It goes to the archive, by the tool's own moves.

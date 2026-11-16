@@ -1,6 +1,6 @@
 ---
 name: rooski-drive
-description: Builds and keeps the coach's Rooski Drive, his football folders and files in Google Drive under "! Rooski Drive" — the first setup (or picking a stopped setup back up), the start-of-chat folder check, the weekly tidy of stray folders and twins, opening a game week, adding a playoff week, moving his folders into the program drive, and the season turn (put this year away, start next year, "not yet", undo). Use when a coach asks to set up or fix his Rooski Drive or football folders ("set up my Rooski Drive", "where do I put my call sheet", "clean up my folders", "open this week", "we made the playoffs", "I'm moving my stuff into the program drive", "new season", "undo the season turn"). Not for scouting reports, tendencies or self-scouts, writing what goes inside a practice plan, game plan or any other file, recruiting, or other Rooski asks that don't touch his Drive folders.
+description: Builds and keeps the coach's Rooski Drive, his football folders and files in Google Drive under "! Rooski Drive" — the first setup (or picking a stopped setup back up), the start-of-chat folder check, the weekly tidy of stray folders and twins, opening a game week, adding a playoff week, moving his folders into the program drive, the season turn (put this year away, start next year, "not yet", undo), what Rooski's Sunday tidy moved in his Rooski Drive and putting those files back, and sharing his Rooski Drive folder so Rooski can help keep it clean. Use when a coach asks to set up or fix his Rooski Drive or football folders ("set up my Rooski Drive", "where do I put my call sheet", "clean up my folders", "open this week", "we made the playoffs", "I'm moving my stuff into the program drive", "new season", "undo the season turn", "did Rooski move some of my files?", "put back what Rooski moved", "how do I let Rooski help keep my Drive clean?"). Not for scouting reports, tendencies or self-scouts, writing what goes inside a practice plan, game plan or any other file, sending or sharing a file with his staff, recruiting, or other Rooski asks that don't touch his Drive folders.
 ---
 
 # Rooski Drive
@@ -10,6 +10,8 @@ The Rooski Drive is the coach's football home in his own Google Drive. Its top f
 ## The tools
 
 - **Rooski connector:** `rooski_tree_plan` (what to build, upgrade, turn or undo) and `rooski_tree_check` (what is missing, misnamed or out of place). They read and change nothing in Drive; they return plans.
+  - `rooski_save` kind `drive_share` records only that he says he shared his folder (`asked`) or `none`. Only Rooski's own check makes a share `active` or `lost`.
+  - `request_help`, when it's in his list, passes his words to the Rooski team.
 - **Match a tool by its name, not its prefix.** The coach named the connector when he added it, so the prefix differs by program.
 - **His Drive connector** (Google Drive) does the listing, making, copying, moving, renaming and starring.
 - **No Rooski tools in the list:** say once, plainly, that the Rooski connector isn't connected, so you can't plan his Rooski Drive, and that he adds it under Customize > Connectors. Never build from memory.
@@ -27,6 +29,7 @@ The Rooski Drive is the coach's football home in his own Google Drive. Its top f
 | "Open this week", "we play Central Friday", "we made the playoffs", a schedule change | Week open | `week-open.md` |
 | "I'm moving my stuff into the program drive", "upgrade me to the program" | Upgrade | `upgrade.md` |
 | "New season", "our season's over", "put this year away", "not yet", "undo the turn" | Season turn | `season-turn.md` |
+| "Did Rooski move my files?", "put back what Rooski moved", "how do I let Rooski help keep my Drive clean?" | Rooski's help | `rooski-help.md` |
 | "Where do I put my call sheet?", "where's my game plan?" | Where it goes | below |
 
 Open the routine's reference file before the first call.
@@ -40,7 +43,10 @@ Open the routine's reference file before the first call.
    - If you find none, he has no Rooski Drive yet. Offer setup.
 2. **Read the whole map.** Its header holds his answers (plan, role, rooms, live year, open week, turn date). Its rows (`| slot | id | name |`) give every folder and file by Drive ID.
 3. **Pass `today`** as his local date, YYYY-MM-DD, on every call.
-4. **His plan** (`free`, `pro` or `program`) comes from Rooski when a tool gives it: the `drive` block's `plan`, or `plan` in `rooski_get` kind `my_data`. When the tool's plan is null, use the header's `plan:`. If the tool's plan differs from the header, the tool wins and the next Home Map you write carries it. Before setup there is no map and no plan from a tool: ask him once. If he isn't sure, use `free` and tell him that switching later only changes the map's header; the next weekly tidy then builds the rest.
+4. **His plan** (`free`, `pro` or `program`) comes from Rooski only: the `drive` block's `plan`, or `plan` in `rooski_get` kind `my_data` (read it once if neither is in this chat). Never take it from the map's header, and never ask him which plan he's on.
+   - If the header's `plan:` differs from Rooski's, Rooski's wins and the next Home Map you write carries it.
+   - **Rooski answers with no plan** (`plan: null`): use the Free steps, write `free` in any map you write, and tell him once, plainly: "Rooski doesn't show your plan yet, so I'm keeping your Rooski Drive to the basics for now. Once Rooski adds your plan, the next weekly tidy builds the rest."
+   - **Rooski didn't answer** (the call failed, or the tool isn't there): that isn't "no plan". Use the Free steps this chat, but leave the header's `plan:` as it is and make no share offer.
 5. **The schedule** comes from his Season Hub when its row is in the map and you can read it. Otherwise ask him. Pass each game as `{ week, opponent, date, playoff }`.
 6. **Act only on the answer's fields.** Show him each offer's `line` text as the tool wrote it. If the answer has `ok: false`, `errors` or `problems`, show them in plain words and change nothing.
 7. **If a call is refused for an argument,** fix that one argument and call again once. If it fails again, tell him what didn't work.
@@ -70,10 +76,14 @@ The connector can't rewrite a file, so every change to the map is a new file:
    - a blank line;
    - `| slot | id | name |`, then `| --- | --- | --- |`;
    - one row per item.
+   - **Carry the `#` lines forward,** even when a tool gave the header or the whole text. The map reader skips them, so only you keep them:
+     - `# share offered: <year>` goes right under the header fields (`rooski-help.md` section C);
+     - a `## Not tidied` list, with its `### <id>: <why>` lines, goes after the table.
 2. **The map has no row for itself.** Skip any check line about the map itself:
    - a build, record or gone line for its own slot (`home_map`, or `room_map` on a program);
    - a twins line for the map's own name. Old copies are handled by step 3, never as twins.
 3. **Put the old map away before the routine ends.** Move it (by its ID) into the folder of the `earlier` row. A program map has no `earlier` row: use the `archive` row. The move goes on that routine's receipt first. The newest map wins.
+4. **Rooski reads his map by the ID on his profile.** On Pro with `drive_share` `asked` or `active`, after the routine's last map write, save the new map's ID: `rooski_save` `{ kind: "profile", scope: "coach", fields: { storage_map: { home_map: "<ID>" } } }`.
 
 ## Receipts before moves
 
@@ -93,8 +103,9 @@ The connector can't rewrite a file, so every change to the map is a new file:
 | Week open | week folders only (from the check) | the week's files too | his own Drive; Rooski opens the program drive |
 | Season turn | build and put away; no cleanup calls | the full turn | the full turn; Rooski turns the program drive on the head coach's yes |
 | Upgrade | — | — | head coach only |
+| Rooski's help (`rooski-help.md`) | none | Sunday moves once his share is `active`; the share offer | the program drive's facts; no offer |
 
-- **Rooski-run help** (a weekly digest, safe moves) exists only for Program, and for Pro once a tool returns `drive_share: active`.
+- **Rooski-run help** (Sunday moves, the count of things worth a look) exists only for Program, and for Pro once a tool returns `drive_share: active`. Free hears of it only if he asks, and never of a share account.
 - **Never say Rooski did something** unless a tool said so. Without that, everything here is done by you, in this chat.
 
 ## Where it goes

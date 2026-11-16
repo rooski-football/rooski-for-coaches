@@ -4,7 +4,7 @@ Every plan gets this, in every chat that touches his Drive or Rooski, once per c
 
 **The connector usually starts it.** Its start-of-chat answer can carry a `drive` block with a `line` telling you to run this check first. That line and this routine are the same job: do it once.
 
-**Skip it** if the Rooski connector already returned a light check this chat. Act on that answer instead (steps 3 and 4).
+**Skip it** if the Rooski connector already returned a light check this chat. Act on that answer instead (steps 3 to 6).
 
 ## 1. Find the Home Map
 
@@ -50,6 +50,14 @@ Don't send a `listing`; that is for the weekly tidy.
 4. **Write a new Home Map** if anything was built or renamed (SKILL.md, Writing the Home Map).
 5. **Tell him in one line** what changed, using names from the answer. For example: "Added `<names from build>`." If nothing changed, say nothing about his Drive.
 
-## 5. Once a week
+## 5. Rooski's help
 
-At his first chat of the week, offer the weekly tidy in one line: "Want a quick tidy of your Rooski Drive?" On yes, open `weekly-tidy.md`.
+When step 4 is done, its one line included, and still once per chat:
+1. **If the `drive` block has `tidy`,** do `rooski-help.md` section A: file the receipt, tell him what moved, give the count of things worth a look.
+2. **Otherwise,** check whether the share offer is due (`rooski-help.md` section C). If it is, make it at the end of this check, never in the middle of other work.
+
+Free, or no plan from Rooski: skip this step.
+
+## 6. Once a week
+
+At his first chat of the week, offer the weekly tidy in one line: "Want a quick tidy of your Rooski Drive?" On yes, open `weekly-tidy.md`. If step 5 already offered it this chat, don't ask again.
