@@ -1,5 +1,8 @@
 # What's new
 
+## 0.3.1 — November 2026
+- Rooski Drive: the skill's short summary is trimmed so every Claude app reads all of it, including the part that tells your AI when not to use it. Nothing else changed.
+
 ## 0.3.0 — November 2026
 - Rooski Drive: on a paid plan, you can now share your `! Rooski Drive` folder with Rooski, and on Sundays Rooski moves leftover temp files from Word, Excel and PowerPoint, and exact copies, into your old-versions folder. Every move is written down before it happens, and your AI puts that list in your Drive, tells you what moved, and can put any file back. Rooski never deletes, never makes or renames files in your Drive, and never changes what's in them. To stop it, un-share the folder. Your AI asks at most once a season.
 
