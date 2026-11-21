@@ -18,7 +18,7 @@ To save calls, skip the week folders of weeks already played. Past weeks hold on
 
 ## 3. Call the check
 
-Call `rooski_tree_check` with `{ home_map, today, mode: "full", listing }`. Add `schedule`, `open_week` and `turn_date` when you have them.
+Call `rooski_run` `{ kind: "drive_check", home_map, today, mode: "full", listing }`. Add `schedule`, `open_week` and `turn_date` when you have them.
 
 ## 4. Do these without asking
 

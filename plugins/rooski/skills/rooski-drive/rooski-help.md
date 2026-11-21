@@ -78,9 +78,9 @@ He may ask after step 2 or in any later chat ("put back what Rooski moved").
    - **Program:** tell him that if it's still an exact copy, Rooski may move it again. If he wants it kept where it is, pass that to Rooski (step 3).
    - **If his Drive tools can't move it,** give him the steps: "In Google Drive, open `<to folder>`, tap the three dots on `<name>`, tap Move, and pick `<from folder>`." Write the receipt and the `## Not tidied` line only after he says it's done.
 3. **All of them:** Rooski puts the whole set back.
-   - With `request_help` in his tools, call it with `request`: his words, word for word. If they don't name the day, add the date from the receipt's name after them.
+   - With `rooski_request` in his tools (or its older name, SKILL.md The tools), call it with `{ kind: "help", text }`, `text` being his words, word for word. If they don't name the day, add the date from the receipt's name after them.
    - If the call worked, tell him: "Passed to Rooski. The team will put them back." If it failed, use the line below.
-   - Without `request_help`: "Tell your Rooski contact you want Rooski's `<date>` moves put back."
+   - With neither: "Tell your Rooski contact you want Rooski's `<date>` moves put back."
    - Never give a day it will happen.
 
 ## C. The share offer (Pro)

@@ -1,5 +1,8 @@
 # What's new
 
+## 0.4.0 — November 2026
+- Calls Rooski's permanent tool names (D2, 2026-11-20). Your AI does the same things as before; if your Rooski plan still uses the older names, it uses those.
+
 ## 0.3.1 — November 2026
 - Rooski Drive: the skill's short summary is trimmed so every Claude app reads all of it, including the part that tells your AI when not to use it. Nothing else changed.
 
