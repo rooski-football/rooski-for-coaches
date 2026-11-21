@@ -12,7 +12,7 @@ Use SKILL.md, Every routine, step 1. With no map there is nothing to check. Offe
 
 ## 2. Call the check
 
-Call `rooski_tree_check` with:
+Call `rooski_run` with `kind: "drive_check"` and these arguments:
 - `home_map`: the map's whole text;
 - `today`;
 - `mode`: `"light"`.

@@ -8,7 +8,7 @@ The turn has two halves:
 
 ## 1. Ask for the turn
 
-Call `rooski_tree_plan` with `step: "turn"`, `home_map` and `today`. It takes only these extra arguments:
+Call `rooski_run` with `kind: "drive_plan"`, holding `step: "turn"`, `home_map` and `today`. It takes only these extra arguments:
 
 | Argument | When to send it |
 |---|---|
@@ -74,7 +74,7 @@ Read the answer:
 He says "undo that" or "undo the turn".
 
 1. **Find the turn receipt** in the `receipts` row's folder: the newest one whose text begins `# Turn`. Read its whole text.
-2. Call `rooski_tree_plan` with `{ step: "turn_undo", receipt, today, home_map }`. Pro and up: add `listing`. It takes no other arguments.
+2. Call `rooski_run` `{ kind: "drive_plan", step: "turn_undo", receipt, today, home_map }`. Pro and up: add `listing`. It takes no other arguments.
 3. If the answer has `ok: false`, show `problems` and stop.
 4. Show `summary` and each `kept_live` line. Ask: "Undo the turn?"
 5. **On his yes:**

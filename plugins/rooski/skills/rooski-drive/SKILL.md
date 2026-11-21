@@ -5,14 +5,15 @@ description: Builds and keeps the coach's Rooski Drive, his football folders in 
 
 # Rooski Drive
 
-The Rooski Drive is the coach's football home in his own Google Drive. Its top folder is `! Rooski Drive`. Two Rooski tools plan every change; his Drive connector makes it. This skill sets the order of the work. Every folder, file, name and number comes from the tools' answers or his Home Map, never from this page or from memory.
+The Rooski Drive is the coach's football home in his own Google Drive. Its top folder is `! Rooski Drive`. Rooski's connector plans every change; his Drive connector makes it. This skill sets the order of the work. Every folder, file, name and number comes from the tools' answers or his Home Map, never from this page or from memory.
 
 ## The tools
 
-- **Rooski connector:** `rooski_tree_plan` (what to build, upgrade, turn or undo) and `rooski_tree_check` (what is missing, misnamed or out of place). They read and change nothing in Drive; they return plans.
+- **Rooski connector:** `rooski_run` with `kind: "drive_plan"` (what to build, upgrade, turn or undo) or `kind: "drive_check"` (what is missing, misnamed or out of place). The routine's arguments go in the same call, beside `kind`. It reads and changes nothing in Drive; it returns plans.
   - `rooski_save` kind `drive_share` records only that he says he shared his folder (`asked`) or `none`. Only Rooski's own check makes a share `active` or `lost`.
-  - `request_help`, when it's in his list, passes his words to the Rooski team.
+  - `rooski_request` kind `help`, when it's in his list, passes his words to the Rooski team.
 - **Match a tool by its name, not its prefix.** The coach named the connector when he added it, so the prefix differs by program.
+- Use the tool names above. If they aren't in his list but `rooski_tree_plan` / `rooski_tree_check` / `request_help` are (a Rooski plan that hasn't moved yet), use those with the same arguments. For the first two, send the same arguments without `kind`; `request_help` takes his words as `request`. A `rooski_run` whose `kind` list has no `drive_plan` or `drive_check` is his reports tool, not this one: use the older names then too.
 - **His Drive connector** (Google Drive) does the listing, making, copying, moving, renaming and starring.
 - **No Rooski tools in the list:** say once, plainly, that the Rooski connector isn't connected, so you can't plan his Rooski Drive, and that he adds it under Customize > Connectors. Never build from memory.
 - **No Drive connector:** say once that his Google Drive isn't connected and that he adds it the same way.

@@ -23,7 +23,7 @@ Use `tree: "personal"`. Pass `last_regular` only if he names his last regular-se
 
 ## 3. Ask for the plan
 
-Call `rooski_tree_plan` with `{ tree, plan, today, head_coach, life, teaching, schedule }`, plus any of `last_regular`, `last_game_date` or `turn_date` you have. Leave `step` out; setup is the default.
+Call `rooski_run` `{ kind: "drive_plan", tree, plan, today, head_coach, life, teaching, schedule }`, plus any of `last_regular`, `last_game_date` or `turn_date` you have. Leave `step` out; setup is the default.
 
 Read the answer:
 
@@ -57,7 +57,7 @@ Use the build rule in SKILL.md, item by item, in the plan's order.
 ## 5. Resume a stopped setup
 
 1. Tell him: "Picking up your setup where we left off."
-2. Call `rooski_tree_check` with `{ home_map, today, mode: "full" }`. Leave out `listing`.
+2. Call `rooski_run` `{ kind: "drive_check", home_map, today, mode: "full" }`. Leave out `listing`.
    - Pass `schedule` again, from his Season Hub or from him. The check only knows the weeks already in the map, so any week folder not built yet comes from the schedule.
 3. Its `build` holds everything still missing, level by level, with `parent_id` wherever the parent is already in the map. For the rest, take the parent's ID from the rows you add as you go.
 4. Build each item under the build rule. The listing in step 3 of the rule catches anything made after the last map write.
@@ -80,6 +80,6 @@ On the Program plan, Rooski builds the program drive. Use these steps only if th
 
 1. Ask for `level` (`"hs"` or `"college"`) and `school` (the name the top folder carries).
 2. Set `program_upgrade: true` if his own seasons and program files will move in later (`upgrade.md`).
-3. Call `rooski_tree_plan` with `{ tree: "program", plan: "program", today, level, school, schedule, program_upgrade }`.
+3. Call `rooski_run` `{ kind: "drive_plan", tree: "program", plan: "program", today, level, school, schedule, program_upgrade }`.
 4. Build it the same way. Its map is the Room Map (`home_map.file` names it). It sits where `home_map.in_slot` says.
 5. A program tree is several times a personal one (`counts.total`). Tell him at the start that it will take more than one chat.

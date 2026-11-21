@@ -10,7 +10,7 @@
 
 ## 2. Ask for the plan
 
-Call `rooski_tree_plan` with `{ step: "upgrade", home_map, room_map, today }`. Send only these four; the tool refuses any other argument for this step.
+Call `rooski_run` `{ kind: "drive_plan", step: "upgrade", home_map, room_map, today }`. Send only these four; the tool refuses any other argument for this step.
 
 If the answer has `ok: false`, show `problems` in plain words and stop. One of them is "already upgraded".
 
