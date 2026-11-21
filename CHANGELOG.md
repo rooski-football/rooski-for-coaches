@@ -1,5 +1,9 @@
 # What's new
 
+## 0.5.0 — November 2026
+- New: the **Rooski Reset** skill. Say "start my Reset" and your AI opens Rooski's Reset steps, the same steps and columns as your Rooski Reset Kit, and works them with you: your players' and staff's answers, the season review, who's back and who to go get, keep / change / add / stop, your learning list, your War Map and the hand-up to your AD. It saves what you decide to your own Google Drive, only on your go. If Rooski's Reset steps aren't on your plan yet, it says so and works from your Kit copy. Needs the Rooski connector and Google Drive.
+- Rooski Drive: your AI now leaves the Reset to the Reset skill. Nothing else changed.
+
 ## 0.4.0 — November 2026
 - Calls Rooski's permanent tool names (D2, 2026-11-20). Your AI does the same things as before; if your Rooski plan still uses the older names, it uses those.
 
