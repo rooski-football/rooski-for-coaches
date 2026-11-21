@@ -1,5 +1,9 @@
 # What's new
 
+## 0.6.0 — November 2026
+- New: **career help**, part of Rooski Pro. Say "build my resume", "build my portfolio", "help me with this job" or "get me ready for the interview", and your AI opens Rooski's career steps and works them with you: your coaching resume and portfolio, a sourced brief on a school with an opening, your letter, who decides there and how to reach them from the school's public pages, your job log, and interview prep (a cheat sheet, a mock interview and a 30-day plan). It saves to your own Google Drive, under your name only, on your go. Your AI drafts; you send. If Rooski's career steps aren't on your plan yet, it says so. Needs the Rooski connector and Google Drive.
+- Rooski Drive: your AI now leaves your resume, portfolio and job search to the career skill. Nothing else changed.
+
 ## 0.5.0 — November 2026
 - New: the **Rooski Reset** skill. Say "start my Reset" and your AI opens Rooski's Reset steps, the same steps and columns as your Rooski Reset Kit, and works them with you: your players' and staff's answers, the season review, who's back and who to go get, keep / change / add / stop, your learning list, your War Map and the hand-up to your AD. It saves what you decide to your own Google Drive, only on your go. If Rooski's Reset steps aren't on your plan yet, it says so and works from your Kit copy. Needs the Rooski connector and Google Drive.
 - Rooski Drive: your AI now leaves the Reset to the Reset skill. Nothing else changed.
