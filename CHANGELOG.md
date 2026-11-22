@@ -1,5 +1,8 @@
 # What's new
 
+## 0.6.1 — November 2026
+- Career help: what you send (resume, portfolio, letters) now carries one small "Built with Rooski" line in the footer of the last page, and nothing else from Rooski. You can still theme it to your school (colors, logo, mascot).
+
 ## 0.6.0 — November 2026
 - New: **career help**, part of Rooski Pro. Say "build my resume", "build my portfolio", "help me with this job" or "get me ready for the interview", and your AI opens Rooski's career steps and works them with you: your coaching resume and portfolio, a sourced brief on a school with an opening, your letter, who decides there and how to reach them from the school's public pages, your job log, and interview prep (a cheat sheet, a mock interview and a 30-day plan). It saves to your own Google Drive, under your name only, on your go. Your AI drafts; you send. If Rooski's career steps aren't on your plan yet, it says so. Needs the Rooski connector and Google Drive.
 - Rooski Drive: your AI now leaves your resume, portfolio and job search to the career skill. Nothing else changed.
