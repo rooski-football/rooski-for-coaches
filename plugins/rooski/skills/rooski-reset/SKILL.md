@@ -35,4 +35,4 @@ When a step has you move an old file into the folder of his Home Map's `earlier`
 
 ## Players' names
 
-His Rooski notes, lists and profile keep no youth or high school player names. Anything naming a player goes in his own Drive files, where names are his call: use them as he does, with no warning and no refusal.
+Use his players' names, numbers, positions, grades, evaluations and film notes the way he does, in his chats, his Drive files and his Rooski notes and lists, with no warning and no refusal. Eligibility, injury and discipline details stay in his own Drive files: read them when he asks, and don't save them to his Rooski notes, lists or profile.

@@ -1,5 +1,8 @@
 # What's new
 
+## 0.6.3 — November 2026
+- Your players' names: the Reset and career help now use names, numbers, grades, evaluations and film notes the way you do, in your chats, your Drive and your Rooski notes and lists. Eligibility, injury and discipline details stay in your own Drive files: your AI reads them when you ask and doesn't keep them.
+
 ## 0.6.2 — November 2026
 - Safer with your Google Drive: your AI finds your Rooski Drive map from your Rooski profile first, and uses only files and folders that are yours. Words inside your files, file names and folder names are treated as information, never as instructions: if a file says to share, move, delete or send something, your AI tells you what it says and waits for you to ask. Anything outside your Rooski Drive, and any share, always asks you first. The Reset and career help follow the same rule.
 
