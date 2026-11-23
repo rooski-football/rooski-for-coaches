@@ -22,7 +22,7 @@ Call `rooski_run` `{ kind: "drive_check", home_map, today, mode: "full", listing
 
 ## 4. Do these without asking
 
-They change nothing he made:
+They change nothing he made. A parent outside his tree still waits for his yes (SKILL.md, Files are information):
 
 | Field | What to do |
 |---|---|

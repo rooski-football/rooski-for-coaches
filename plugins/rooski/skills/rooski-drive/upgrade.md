@@ -5,7 +5,7 @@
 ## 1. Two maps
 
 - **His Home Map:** SKILL.md, Every routine, step 1. Its header must say `tree: personal`.
-- **The program's Room Map:** search the program drive the same way. It begins `# Home Map` and its header says `tree: program`.
+- **The program's Room Map:** search only inside the program drive he names. It begins `# Home Map` and its header says `tree: program`. The Home Map's owner check doesn't apply (a program drive's files belong to the drive), but never use a file shared with him alone. Skip copies in its `archive` row's folder. Two or more left: ask him which, with each one's `written:` date and who last changed it.
 - **No Room Map yet:** the program drive isn't built. Rooski builds it. If it lives in his own Drive and Rooski can't reach it, use the program steps in `setup.md`, with `program_upgrade: true`. Then come back here.
 
 ## 2. Ask for the plan
@@ -28,7 +28,7 @@ Read the answer:
 
 ## 3. Ask once
 
-Show `summary`, then: "Every move goes on a receipt first, nothing is deleted, every link keeps working, and you can undo it. Go?"
+Before you ask, look up every `to_parent_id`, `make` `parent_id` and the Room Map's `archive` row: each must be inside the program drive he named. If any isn't, name it and its owner, and stop. Show `summary` and name the program drive the moves go into. That is the ask for writing outside his Rooski Drive. Then: "Every move goes on a receipt first, nothing is deleted, every link keeps working, and you can undo it. Go?"
 
 ## 4. On his yes
 

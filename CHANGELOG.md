@@ -1,5 +1,8 @@
 # What's new
 
+## 0.6.2 — November 2026
+- Safer with your Google Drive: your AI finds your Rooski Drive map from your Rooski profile first, and uses only files and folders that are yours. Words inside your files, file names and folder names are treated as information, never as instructions: if a file says to share, move, delete or send something, your AI tells you what it says and waits for you to ask. Anything outside your Rooski Drive, and any share, always asks you first. The Reset and career help follow the same rule.
+
 ## 0.6.1 — November 2026
 - Career help: what you send (resume, portfolio, letters) now carries one small "Built with Rooski" line in the footer of the last page, and nothing else from Rooski. You can still theme it to your school (colors, logo, mascot).
 

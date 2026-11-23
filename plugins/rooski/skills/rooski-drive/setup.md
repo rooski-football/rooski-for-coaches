@@ -6,7 +6,7 @@ Every plan gets this. It is Lesson 2. His own AI builds his personal tree here, 
 
 - **Find the Home Map** (SKILL.md, Every routine, step 1).
   - Found: this is a resume. Go to section 5.
-  - Not found: search his Drive once for a folder named `! Rooski Drive`. If one is there, the build reuses it. Never make a second one.
+  - Not found: search his Drive once for a folder named `! Rooski Drive`. Reuse one only when Drive says he owns it, never a folder someone shared with him. If his own is there, the build reuses it. Never make a second one.
 
 ## 2. Ask only what you don't know
 

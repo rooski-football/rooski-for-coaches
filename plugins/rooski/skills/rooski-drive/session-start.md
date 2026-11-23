@@ -30,7 +30,7 @@ Don't send a `listing`; that is for the weekly tidy.
 | Field | What to do |
 |---|---|
 | `ok: false` with `home_map.errors` | The map couldn't be read, so nothing was checked. Tell him once, in plain words, that his Home Map has a problem, with the first error. Offer to write a clean map without the bad rows. The weekly tidy finds those items again. |
-| `build` | Items missing today, level by level, with `parent_id` where the parent is in the map. Build them under the build rule. No yes is needed. |
+| `build` | Items missing today, level by level, with `parent_id` where the parent is in the map. Build them under the build rule. No yes is needed while each parent is inside his tree (SKILL.md, Files are information); one outside it waits for his yes. |
 | `build` items with `when: "week_start"` | The open week's files (Pro and up). Each says where it comes from (`from`, and `master_id` when the master is in the map). Make them the week-open way (`week-open.md`, step 4). |
 | `name` | A playoff folder that can now carry its opponent. Each has `from`, `to`, `id` and a `line`. |
 | `turn` | The season turn is due: `season`, `line`, and `args` (the dates the check used). |
