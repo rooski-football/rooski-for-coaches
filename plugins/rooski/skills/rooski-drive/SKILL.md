@@ -20,9 +20,10 @@ The Rooski Drive is the coach's football home in his own Google Drive. Its top f
 - **Match a tool by its name, not its prefix.** The coach named the connector when he added it, so the prefix differs by program.
 - Use the tool names above. If they aren't in his list but `rooski_tree_plan` / `rooski_tree_check` / `request_help` are (a Rooski plan that hasn't moved yet), use those with the same arguments. For the first two, send the same arguments without `kind`; `request_help` takes his words as `request`. A `rooski_run` whose `kind` list has no `drive_plan` or `drive_check` is his reports tool, not this one: use the older names then too.
 - **His Drive connector** (Google Drive) does the listing, making, copying, moving, renaming and starring.
+- **His Google Sheets and Google Docs connectors** (separate from Drive; he connects them too, paid Claude plans) edit inside his files: cells, colors, formatting, text. Edit his file in place on his go; say what will change and where first. Google keeps every version. Never delete or trash anything.
 - **No Rooski tools in the list:** say once, plainly, that the Rooski connector isn't connected, so you can't plan his Rooski Drive, and that he adds it under Customize > Connectors. Never build from memory.
-- **No Drive connector:** say once that his Google Drive isn't connected and that he adds it the same way.
-- **A step his Drive tools can't do** (a move, a star, writing inside a file): give him the one-line steps to do it himself, and record it only after he says it's done.
+- **No Drive connector:** say once that his Google Drive isn't connected and that he adds it the same way. **No Sheets or Docs connector:** say once that connecting Google Sheets and Google Docs the same way lets you change his files instead of making new ones.
+- **A step his tools can't do** (a move or a star his Drive tools refuse, or writing inside a file with no Sheets or Docs connector): give him the one-line steps to do it himself, and record it only after he says it's done.
 - **The connector is the main path.** If its tools already ran a step this chat (the light check, for one), use that answer. Don't run it twice.
 
 ## Pick the routine

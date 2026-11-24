@@ -18,7 +18,7 @@ His own job search: his resume, his portfolio, going after a job, and getting re
 2. **Open the step he picks:** `rooski_get` with `{ kind: "starter", id: "career-1" }` for his resume, `"career-2"` his portfolio, `"career-3"` help with a job, `"career-4"` interview prep. The start says which is which. Don't open the ones he hasn't picked.
 3. **Open a master when the step says to,** before you write that file: `rooski_get` with `{ kind: "starter", id: "coaching-resume" }`, and the same way `"coaching-portfolio"`, `"job-log"`, `"coaching-network"` or `"coaching-beliefs"`.
 4. **Match a tool by its name, not its prefix.** The coach named the Rooski connector when he added it, so the prefix differs by program.
-5. **His Drive connector** (Google Drive) finds, reads and saves his files, as the steps say.
+5. **His Drive connector** (Google Drive) finds, reads and saves his files; **his Google Sheets and Google Docs connectors** (he connects them too) edit inside them on his go, as the steps say.
 
 ## When the steps aren't there
 
