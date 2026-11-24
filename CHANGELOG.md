@@ -1,5 +1,8 @@
 # What's new
 
+## 0.6.4 — November 2026
+- Your AI can now change your Google files, not just make new ones. Connect Google Sheets and Google Docs in Claude (Customize > Connectors, same as Google Drive; paid Claude plans) and Rooski AI edits your War Map, practice plans, resume and other files right where they are, on your go: dates, colors, dropdowns, wording. Google keeps every version, so nothing is lost. Without them, your AI makes a new copy as before.
+
 ## 0.6.3 — November 2026
 - Your players' names: the Reset and career help now use names, numbers, grades, evaluations and film notes the way you do, in your chats, your Drive and your Rooski notes and lists. Eligibility, injury and discipline details stay in your own Drive files: your AI reads them when you ask and doesn't keep them.
 
