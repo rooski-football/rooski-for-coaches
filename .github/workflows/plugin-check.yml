@@ -1,0 +1,80 @@
+name: Plugin check
+
+# Read-only structure checks for the plugin files. No secrets, no write access, no network.
+#   - every plugin.json / marketplace.json parses as JSON
+#   - every SKILL.md opens with --- frontmatter that has a name and a description
+#   - no symlinks anywhere under plugins/
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  plugin-check:
+    name: plugin-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Check plugin files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, pathlib, re, sys
+
+          errors = []
+          root = pathlib.Path(".")
+
+          # 1. Manifests parse as JSON.
+          manifests = [p for p in root.rglob("*.json")
+                       if p.name in ("plugin.json", "marketplace.json") and ".git" not in p.parts]
+          if not manifests:
+              errors.append("no plugin.json or marketplace.json found")
+          for p in manifests:
+              try:
+                  data = json.loads(p.read_text(encoding="utf-8"))
+                  if not isinstance(data, dict):
+                      errors.append(f"{p}: top level is not an object")
+              except Exception as e:
+                  errors.append(f"{p}: not valid JSON ({e})")
+
+          # 2. Every SKILL.md has frontmatter with name and description.
+          skills = [p for p in root.rglob("SKILL.md") if ".git" not in p.parts]
+          if not skills:
+              errors.append("no SKILL.md found")
+          for p in skills:
+              lines = p.read_text(encoding="utf-8").splitlines()
+              if not lines or lines[0].strip() != "---":
+                  errors.append(f"{p}: first line is not ---")
+                  continue
+              try:
+                  end = next(i for i in range(1, len(lines)) if lines[i].strip() == "---")
+              except StopIteration:
+                  errors.append(f"{p}: frontmatter is never closed with ---")
+                  continue
+              front = lines[1:end]
+              for key in ("name", "description"):
+                  if not any(re.match(rf"{key}:\s*\S", l) for l in front):
+                      errors.append(f"{p}: frontmatter has no non-empty {key}")
+
+          # 3. No symlinks under plugins/.
+          plugins = root / "plugins"
+          if plugins.exists():
+              for p in plugins.rglob("*"):
+                  if p.is_symlink():
+                      errors.append(f"{p}: symlink not allowed under plugins/")
+
+          for e in errors:
+              print(f"::error::{e}")
+          if errors:
+              sys.exit(1)
+          print(f"OK: {len(manifests)} manifests, {len(skills)} skills")
+          PY
