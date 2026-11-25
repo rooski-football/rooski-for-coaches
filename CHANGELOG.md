@@ -1,5 +1,8 @@
 # What's new
 
+## 0.6.5 — November 2026
+- Your school's look: when you set up your Rooski Drive, Rooski AI offers once to put your files in your school's colors (it finds them on your school's site and you confirm), with your mascot and your logo. Every Rooski file it makes for you after that comes out in your colors. Say "change my colors" any time.
+
 ## 0.6.4 — November 2026
 - Your AI can now change your Google files, not just make new ones. Connect Google Sheets and Google Docs in Claude (Customize > Connectors, same as Google Drive; paid Claude plans) and Rooski AI edits your War Map, practice plans, resume and other files right where they are, on your go: dates, colors, dropdowns, wording. Google keeps every version, so nothing is lost. Without them, your AI makes a new copy as before.
 
