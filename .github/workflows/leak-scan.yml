@@ -1,0 +1,106 @@
+name: Leak scan
+
+# Free secret scanning.
+# Runs the gitleaks CLI directly — NOT gitleaks/gitleaks-action, which needs a paid licence key
+# for organisation repos. The binary is a pinned release with its SHA-256 checked before use.
+#
+# It scans only the NEW commits: base..head on a pull request, before..after on a push to main.
+# Old history was scanned once by hand when this file was added.
+#
+# Merge commits are scanned against their first parent (--diff-merges=first-parent), so a key
+# slipped in while resolving a merge is caught too.
+#
+# Escape hatches are narrowed on purpose:
+#   - inline `gitleaks:allow` comments are ignored (--ignore-gitleaks-allow);
+#   - a .gitleaksignore file fails the job (gitleaks would otherwise honour it);
+#   - on a pull request the rules come from the BASE branch's .gitleaks.toml (or gitleaks'
+#     defaults if it has none), so a PR cannot loosen the rules it is checked against.
+#     A new allowlist entry lands in its own reviewed PR first;
+#   - the job warns when a change touches .gitleaks.toml or this workflow.
+# Findings are redacted in the log: file, line, rule and commit only, never the value.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    name: gitleaks (new commits only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install gitleaks (pinned release, checksum checked)
+        env:
+          GITLEAKS_VERSION: 8.30.1
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          curl -sSfL -o gitleaks.tar.gz \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf gitleaks.tar.gz gitleaks
+          mkdir -p no-ignore-file
+          ./gitleaks version
+
+      - name: Scan the new commits
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [ -e .gitleaksignore ]; then
+            echo "::error title=.gitleaksignore not allowed::Remove .gitleaksignore. Allowlist a known false positive in .gitleaks.toml, with a reason, in its own reviewed PR."
+            exit 1
+          fi
+          if [ "$EVENT" = "pull_request" ]; then
+            FROM="$PR_BASE"; TO="$PR_HEAD"
+          else
+            FROM="$PUSH_BEFORE"; TO="$PUSH_AFTER"
+          fi
+          CFG="$RUNNER_TEMP/gitleaks.toml"
+          if [ "$EVENT" = "pull_request" ]; then
+            # Rules from the base branch, never from the PR itself.
+            git show "${PR_BASE}:.gitleaks.toml" > "$CFG" 2>/dev/null \
+              || printf '[extend]\nuseDefault = true\n' > "$CFG"
+          elif [ -f .gitleaks.toml ]; then
+            cp .gitleaks.toml "$CFG"
+          else
+            printf '[extend]\nuseDefault = true\n' > "$CFG"
+          fi
+          if [ -n "$FROM" ] && [ "$FROM" != "0000000000000000000000000000000000000000" ] \
+             && git cat-file -e "${FROM}^{commit}" 2>/dev/null; then
+            RANGE="${FROM}..${TO}"
+            if ! git diff --quiet "${FROM}...${TO}" -- .gitleaks.toml .github/workflows/leak-scan.yml; then
+              echo "::warning title=Leak scan settings changed::This change edits .gitleaks.toml or leak-scan.yml. A reviewer must check that no rule was weakened."
+            fi
+          elif [ "$EVENT" = "pull_request" ]; then
+            echo "::error::Cannot find the PR's base commit ${FROM}; refusing to pass without scanning."
+            exit 1
+          else
+            # Push with no usable "before" (branch created, force-push): scan everything reachable. Fails closed.
+            RANGE="${TO}"
+          fi
+          echo "Scanning commits: $RANGE"
+          "$RUNNER_TEMP/gitleaks" git . \
+            --log-opts="--diff-merges=first-parent $RANGE" \
+            --config "$CFG" \
+            --redact \
+            --ignore-gitleaks-allow \
+            -i "$RUNNER_TEMP/no-ignore-file" \
+            --no-banner \
+            --no-color \
+            --verbose \
+            --exit-code 1
