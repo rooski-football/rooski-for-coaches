@@ -39,6 +39,10 @@ Read the answer:
 
 Tell him in one line: "I'll build your Rooski Drive for the `<live_year>` season: `<counts.total>` folders and files. If this chat stops, the next one picks up where it left off."
 
+## 3b. His school's look (once, before you build)
+
+His starter files are copies of Rooski's designed templates, so ask once before you build: "Want your files in your school's colors? It takes a minute." On yes, open `rooski_get` with `{ kind: "starter", id: "program-brand" }` and follow it, then build: each copy comes out in his colors. On "not now", build in Rooski's blue and don't ask again this setup. If his profile already has a brand, skip the question and use it.
+
 ## 4. Build level by level
 
 Use the build rule in SKILL.md, item by item, in the plan's order.

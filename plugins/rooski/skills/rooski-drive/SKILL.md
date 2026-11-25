@@ -32,6 +32,7 @@ The Rooski Drive is the coach's football home in his own Google Drive. Its top f
 | The coach says | Routine | Reference |
 |---|---|---|
 | "Set up my Rooski Drive", "build my football folders", "my setup stopped, pick it up" | Setup | `setup.md` |
+| "Set up my brand", "use my school colors", "change my colors" | His program's brand | `rooski_get` `{ kind: "starter", id: "program-brand" }` |
 | The first message of a chat about his Drive or Rooski | Light check | `session-start.md` |
 | "Clean up my folders", "what's out of place", his first chat of the week | Weekly tidy | `weekly-tidy.md` |
 | "Open this week", "we play Central Friday", "we made the playoffs", a schedule change | Week open | `week-open.md` |
