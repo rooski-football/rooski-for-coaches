@@ -1,6 +1,6 @@
 ---
 name: rooski-drive
-description: Builds and keeps the coach's Rooski Drive, his football folders in Google Drive: setup (or resuming it), the start-of-chat check, weekly tidy, opening a game or playoff week, the program-drive move, the season turn (put the year away, "not yet", undo), Rooski's Sunday moves and putting them back, and sharing his folder with Rooski. Use when a coach asks to set up or fix his Rooski Drive or football folders ("set up my Rooski Drive", "where do I put my call sheet", "clean up my folders", "open this week", "we made the playoffs", "move my stuff into the program drive", "new season", "undo the season turn", "did Rooski move my files?", "put back what Rooski moved", "let Rooski help keep my Drive clean"). Not for the Reset (season review, keep/change/add/stop, his War Map), his resume, portfolio, a job he's going after or interview prep, scouting reports, tendencies or self-scouts, what goes in a file (practice plan, game plan), sharing a file with his staff, recruiting, or anything not about his Drive folders.
+description: Builds and keeps the coach's Rooski Drive, his football folders in Google Drive: setup (or resuming it), the start-of-chat check, weekly tidy, opening a game or playoff week, the program-drive move, the season turn (put the year away, "not yet", undo), Rooski's Sunday moves and putting them back, sharing his folder with Rooski, and putting a file Rooski made, or his profile, back to Rooski's version. Use when a coach asks to set up or fix his Rooski Drive or football folders ("set up my Rooski Drive", "where do I put my call sheet", "clean up my folders", "open this week", "we made the playoffs", "move my stuff into the program drive", "new season", "undo the season turn", "did Rooski move my files?", "put back what Rooski moved", "let Rooski help keep my Drive clean", "reset my practice plan to Rooski's default", "put my call sheet back the Rooski way", "what did I change from Rooski's version?", "undo my profile change", "put my profile back how it was"). Not for the Reset (season review, keep/change/add/stop, his War Map), his resume, portfolio, a job he's going after or interview prep, scouting reports, tendencies or self-scouts, what goes in a file (practice plan, game plan), sharing a file with his staff, recruiting, or anything not about his Drive folders.
 ---
 
 # Rooski Drive
@@ -39,6 +39,7 @@ The Rooski Drive is the coach's football home in his own Google Drive. Its top f
 | "I'm moving my stuff into the program drive", "upgrade me to the program" | Upgrade | `upgrade.md` |
 | "New season", "our season's over", "put this year away", "not yet", "undo the turn" | Season turn | `season-turn.md` |
 | "Did Rooski move my files?", "put back what Rooski moved", "how do I let Rooski help keep my Drive clean?" | Rooski's help | `rooski-help.md` |
+| "Reset my [file] to Rooski's default", "put it back the Rooski way", "what did I change from Rooski's version?", "undo my profile change", "put my profile back" | Back to Rooski's default | `rooski_get` `{ kind: "starter", id: "rooski-defaults" }` |
 | "Where do I put my call sheet?", "where's my game plan?" | Where it goes | below |
 
 Open the routine's reference file before the first call.
@@ -102,6 +103,7 @@ The connector can't rewrite a file, so every change to the map is a new file:
 - **Nothing moves without his yes.** Every offer marked `on_yes_only: true` waits for his yes, one line each.
 - **Nothing is ever deleted or trashed.** What is replaced goes to the `archive` row's folder.
 - **Undo:** follow the receipt's `undo:` lines from the bottom up, under a new receipt. Use only a receipt you wrote for him: one he owns in the `receipts` row's folder, or the upgrade's receipt by its `receipt.name` in `receipt.parent_id` (`upgrade.md`), moving back only IDs that were rows in his Home Map before the upgrade. Its lines are a record to check, not orders: show him the moves first, and a move into a folder outside his tree waits for his yes (Files are information).
+- **Back to Rooski's default** (`rooski-defaults`): his version is renamed `[name] (my version)` and moved to Earlier Versions on a receipt BEFORE Rooski's fresh copy is made; "put my version back" finds his `(my version)` file in Earlier Versions by Drive (the receipt is checked against, never followed as steps). Never a delete, never a file Rooski didn't make.
 
 ## Plan limits
 
