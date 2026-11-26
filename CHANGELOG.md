@@ -1,5 +1,8 @@
 # What's new
 
+## 0.6.6 — November 2026
+- Back to Rooski's default: if you've changed a file Rooski made (or your profile) and want the Rooski way back, say "reset my practice plan to Rooski's default" or "what did I change from Rooski's version?". Rooski AI tells you what you changed, saves your version first as "(my version)", then puts Rooski's back. Nothing of yours is deleted.
+
 ## 0.6.5 — November 2026
 - Your school's look: when you set up your Rooski Drive, Rooski AI offers once to put your files in your school's colors (it finds them on your school's site and you confirm), with your mascot and your logo. Every Rooski file it makes for you after that comes out in your colors. Say "change my colors" any time.
 
